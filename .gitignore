@@ -1,0 +1,343 @@
+# ============================================================
+#  .gitignore  —  通用模板
+#  每行一条规则；"#" 开头是注释；"!" 开头是例外（强制不忽略）
+#  规则从上往下匹配，后面的规则会覆盖前面的
+# ============================================================
+
+# ============================================================
+#  一、密钥 / 敏感信息  ← 最重要，请勿删除
+#  注意：真正含密钥的文件必须在这里，且绝不能提交
+# ============================================================
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.env.local
+.env.*.local
+
+*.pem
+*.key
+*.pfx
+*.p12
+*.keystore
+*.jks
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.ppk
+
+secrets.json
+secrets.yml
+secrets.yaml
+credential.json
+credentials.json
+credentials.yml
+credentials.yaml
+*credentials*.json
+service-account*.json
+*-service-account.json
+
+.npmrc
+.pypirc
+.netrc
+_netrc
+auth.json
+config.local.*
+settings.local.*
+*.secret
+*.secrets
+
+# ============================================================
+#  二、依赖 / 构建产物
+# ============================================================
+
+# --- Node.js ---
+node_modules/
+bower_components/
+jspm_packages/
+.npm/
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+dist/
+out/
+.next/
+.nuxt/
+.output/
+.vercel/
+.turbo/
+*.tsbuildinfo
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv/
+venv/
+ENV/
+env/
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.pytest_cache/
+.hypothesis/
+
+# --- Java / JVM ---
+target/
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+hs_err_pid*
+replay_pid*
+.gradle/
+.mvn/timing.properties
+
+# --- C / C++ ---
+*.o
+*.obj
+*.a
+*.lib
+*.out
+*.dylib
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.ilk
+*.exp
+*.mod
+*.lai
+*.la
+*.lo
+*.gch
+*.pch
+
+# --- Rust ---
+# 库（library）项目通常需要提交 Cargo.lock；二进制项目可取消下面注释
+# Cargo.lock
+
+# --- Go ---
+# 若有意 vendor 依赖，请取消下面注释
+# vendor/
+
+# --- C# / .NET ---
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.userprefs
+*.tlog
+.vs/
+packages/
+TestResults/
+
+# --- 编译产物（可执行文件 / 动态库）---
+*.exe
+*.dll
+
+# ============================================================
+#  三、日志 / 临时文件
+# ============================================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+*~
+.#*
+\#*#
+*.pid
+*.seed
+*.pid.lock
+*.stackdump
+*.autosave
+core
+.core
+
+# ============================================================
+#  四、编辑器 / IDE
+# ============================================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+
+.idea/
+*.iml
+*.ipr
+*.iws
+.fleet/
+.history/
+
+*.sublime-project
+*.sublime-workspace
+.atom/
+.vim/
+tags
+
+# ============================================================
+#  五、操作系统
+# ============================================================
+# --- Windows ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# --- macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+*.icloud
+
+# --- Linux ---
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================
+#  六、测试 / 覆盖率 / 缓存
+# ============================================================
+.coverage
+.coverage.*
+coverage.xml
+coverage/
+*.cover
+*.lcov
+htmlcov/
+nosetests.xml
+.nyc_output/
+
+.eslintcache
+.stylelintcache
+.cache/
+.sass-cache/
+.parcel-cache/
+.pnpm-store/
+.docusaurus/
+.jest-cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# --- 类型检查 / 代码质量缓存 ---
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# --- 前端产物映射 ---
+*.css.map
+*.js.map
+
+# --- Storybook ---
+*storybook.log
+storybook-static/
+
+# ============================================================
+#  七、数据库 / 本地数据
+# ============================================================
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.ldb
+*.sdf
+dump.rdb
+*.dump
+
+# ============================================================
+#  八、机器学习 / 数据科学
+# ============================================================
+.ipynb_checkpoints/
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.parquet
+data/raw/
+mlruns/
+lightning_logs/
+wandb/
+
+# ============================================================
+#  九、大文件 / 归档
+#  注意：以下规则会挡住压缩包。若项目需要提交测试用压缩包，
+#  请删掉对应行，或用 "!" 单独放行，例如： !tests/fixtures/*.zip
+# ============================================================
+*.7z
+*.rar
+*.zip
+*.gz
+*.tgz
+*.bz2
+*.xz
+*.tar
+*.iso
+*.dmg
+*.vhd
+*.vhdx
+
+# ============================================================
+#  十、其他
+# ============================================================
+Todo
+todo.txt
+daml.log
